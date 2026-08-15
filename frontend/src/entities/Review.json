@@ -1,0 +1,59 @@
+{
+  "name": "Review",
+  "type": "object",
+  "properties": {
+    "destination": {
+      "type": "string",
+      "description": "Place being reviewed"
+    },
+    "content": {
+      "type": "string",
+      "description": "Review text"
+    },
+    "rating": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Image URLs from the trip"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Hashtags like #SoloTravel, #Adventure"
+    },
+    "likes": {
+      "type": "number",
+      "default": 0
+    },
+    "comments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "user_email": {
+            "type": "string"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "destination",
+    "content",
+    "rating"
+  ]
+}

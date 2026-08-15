@@ -1,0 +1,75 @@
+{
+  "name": "Booking",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "flight",
+        "train"
+      ],
+      "description": "Type of booking"
+    },
+    "service_name": {
+      "type": "string",
+      "description": "Airline or train name"
+    },
+    "service_number": {
+      "type": "string",
+      "description": "Flight number or train number"
+    },
+    "route": {
+      "type": "string",
+      "description": "From-To route"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Journey date"
+    },
+    "passengers": {
+      "type": "number",
+      "description": "Number of passengers"
+    },
+    "seats": {
+      "type": "string",
+      "description": "Allocated seat numbers"
+    },
+    "total_price": {
+      "type": "number",
+      "description": "Total fare in INR"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "confirmed",
+        "pending",
+        "cancelled"
+      ],
+      "default": "confirmed",
+      "description": "Booking status"
+    },
+    "pnr": {
+      "type": "string",
+      "description": "PNR number"
+    },
+    "synced_at": {
+      "type": "string",
+      "description": "Last sync timestamp"
+    },
+    "external_booking_id": {
+      "type": "string",
+      "description": "External provider booking ID"
+    },
+    "provider": {
+      "type": "string",
+      "description": "Booking provider (IRCTC, Skyscanner, Agoda, etc.)"
+    }
+  },
+  "required": [
+    "type",
+    "service_name",
+    "route",
+    "date"
+  ]
+}

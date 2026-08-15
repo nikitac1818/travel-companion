@@ -1,0 +1,49 @@
+{
+  "name": "Trip",
+  "type": "object",
+  "properties": {
+    "destination": {
+      "type": "string",
+      "description": "Destination city or country"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "budget": {
+      "type": "number",
+      "description": "Budget in INR"
+    },
+    "interests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Travel interests like adventure, culture, nature"
+    },
+    "itinerary": {
+      "type": "object",
+      "description": "Generated itinerary with daily plans"
+    },
+    "trip_type": {
+      "type": "string",
+      "enum": [
+        "adventure",
+        "cultural",
+        "relaxed",
+        "romantic",
+        "family"
+      ],
+      "default": "adventure"
+    }
+  },
+  "required": [
+    "destination",
+    "start_date",
+    "end_date"
+  ]
+}
